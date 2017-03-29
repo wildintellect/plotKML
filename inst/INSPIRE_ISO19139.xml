@@ -42,6 +42,20 @@
 	<gmd:metadataStandardVersion>
 		<gco:CharacterString>2003/Cor.1:2006</gco:CharacterString>
 	</gmd:metadataStandardVersion>
+	<gmd:referenceSystemInfo>
+  <gmd:MD_ReferenceSystem>
+    <gmd:referenceSystemIdentifier>
+      <gmd:RS_Identifier>
+        <gmd:code>
+          <gco:CharacterString>http://www.opengis.net/def/crs/EPSG/0/4326</gco:CharacterString>
+        </gmd:code>
+        <gmd:codeSpace>
+          <gco:CharacterString>urn:ogc:def:crs:EPSG</gco:CharacterString>
+        </gmd:codeSpace>
+      </gmd:RS_Identifier>
+    </gmd:referenceSystemIdentifier>
+  </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
 	<gmd:identificationInfo>
 		<gmd:MD_DataIdentification>
 			<gmd:citation>
@@ -199,20 +213,6 @@
 			</gmd:extent>
 		</gmd:MD_DataIdentification>
 	</gmd:identificationInfo>  
-  <gmd:referenceSystemInfo>
-  <gmd:MD_ReferenceSystem>
-    <gmd:referenceSystemIdentifier>
-      <gmd:RS_Identifier>
-        <gmd:code>
-          <gco:CharacterString>http://www.opengis.net/def/crs/EPSG/0/4326</gco:CharacterString>
-        </gmd:code>
-        <gmd:codeSpace>
-          <gco:CharacterString>urn:ogc:def:crs:EPSG</gco:CharacterString>
-        </gmd:codeSpace>
-      </gmd:RS_Identifier>
-    </gmd:referenceSystemIdentifier>
-  </gmd:MD_ReferenceSystem>
-  </gmd:referenceSystemInfo>
 	<gmd:distributionInfo>
 		<gmd:MD_Distribution>
 			<gmd:transferOptions>
