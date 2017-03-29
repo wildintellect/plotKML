@@ -34,7 +34,7 @@
 		</gmd:CI_ResponsibleParty>
 	</gmd:contact>
 	<gmd:dateStamp>
-		<gco:Date>2014-02-04</gco:Date>
+		<gco:Date></gco:Date>
 	</gmd:dateStamp>
 	<gmd:metadataStandardName>
 		<gco:CharacterString>ISO19115</gco:CharacterString>
