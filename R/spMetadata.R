@@ -1,6 +1,6 @@
 # Purpose        : Automated generation of (spatial) metadata
 # Maintainer     : Tomislav Hengl (tom.hengl@wur.nl);
-# Contributions  : Michael Blaschek (blaschek@geographie.uni-kiel.de) and Eloi Ribeiro (eloi.carvalhoribeiro@wur.nl); 
+# Contributions  : Michael Blaschek (blaschek@geographie.uni-kiel.de), Eloi Ribeiro (eloi.carvalhoribeiro@wur.nl) and Alex Mandel (aimandel@ucdavis.edu); 
 # Dev Status     : Beta
 # Note           : Based on the US gov sp metadata standards [http://www.fgdc.gov/metadata/csdgm/], which can be converted to "ISO 19139" XML schema; and on the INSPIRE Metadata Implementing Rules [http://inspire.jrc.ec.europa.eu/documents/Metadata/MD_IR_and_ISO_20131029.pdf]
 
@@ -157,6 +157,11 @@ setMethod("GetPalette", "SpatialMetadata", function(obj){obj@palette})
       CI_RS_identifier <- get("CI_RS_identifier", envir = metadata)
       if(CI_RS_identifier==""){
         xmlValue(ml[["identificationInfo"]][["MD_DataIdentification"]][["citation"]][["CI_Citation"]][["identifier"]][["RS_Identifier"]][["code"]][[1]]) <- uuid::UUIDgenerate(use.time = FALSE)
+      }
+      # Default DateStamp is now
+      Date_stamp <- get("Date_stamp", envir = metadata)
+      if(Date_stamp==""){
+        xmlValue(ml[["dateStamp"]][["Date"]][[1]]) <- Sys.Date()
       }
       ## Responsible party:
       xmlValue(ml[["identificationInfo"]][["MD_DataIdentification"]][["pointOfContact"]][["CI_ResponsibleParty"]][["organisationName"]][[1]]) <- get("MD_Organisation_name", envir = metadata)
