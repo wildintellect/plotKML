@@ -159,7 +159,8 @@ setMethod("GetPalette", "SpatialMetadata", function(obj){obj@palette})
         xmlValue(ml[["identificationInfo"]][["MD_DataIdentification"]][["citation"]][["CI_Citation"]][["identifier"]][["RS_Identifier"]][["code"]][[1]]) <- uuid::UUIDgenerate(use.time = FALSE)
       }
       # Default DateStamp is now
-      #Date_stamp <- get("Date_stamp", envir = metadata)
+      xmlValue(ml[["dateStamp"]][["Date"]][[1]]) <- get("Date_stamp", envir = metadata)
+      print(xmlValue(ml[["dateStamp"]][["Date"]][[1]]))
       #xmlValue(ml[["dateStamp"]][["Date"]][[1]]) <- strftime(Sys.Date(),"%Y-%m-%d")
       
       ## Responsible party:
