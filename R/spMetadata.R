@@ -199,17 +199,22 @@ setMethod("GetPalette", "SpatialMetadata", function(obj){obj@palette})
       if(!MD_Use_limitations==""){
         xmlValue(ml[["identificationInfo"]][["MD_DataIdentification"]][["resourceConstraints"]][["MD_Constraints"]][["useLimitation"]][[1]]) <- MD_Use_limitations
       }
+      
+      ## TODO: if it's a vector layer put a scale, if it's raster get the units and resolution
       ## Scale number / resolution:
       MD_Equivalent_scale <- get("MD_Equivalent_scale", envir = metadata)
       xx <- which(names(ml[["identificationInfo"]][["MD_DataIdentification"]]) == "spatialResolution")  ## TH: there are two nodes of the same name!
       if(!MD_Equivalent_scale==""){
         xmlValue(ml[["identificationInfo"]][["MD_DataIdentification"]][[xx[1]]][["MD_Resolution"]][["equivalentScale"]][["MD_RepresentativeFraction"]][["denominator"]][["Integer"]]) <- MD_Equivalent_scale
       }
+      
+      
       MD_Resolution <- get("MD_Resolution", envir = metadata)
-      if(!MD_Resolution==""){  
+      if(!MD_Resolution==""){
         xmlValue(ml[["identificationInfo"]][["MD_DataIdentification"]][[xx[2]]][["MD_Resolution"]][["distance"]][["Distance"]]) <- MD_Resolution
         xmlAttrs(ml[["identificationInfo"]][["MD_DataIdentification"]][[xx[2]]][["MD_Resolution"]][["distance"]][["Distance"]])[[1]] <- "#m"
       }
+      
       ## Coordinate system:
       MD_ReferenceSystem_Identifier <- get("MD_ReferenceSystem_Identifier", envir = metadata)
       if(MD_ReferenceSystem_Identifier==""){  
@@ -518,13 +523,25 @@ setMethod("spMetadata", "Spatial", .spMetadata.Spatial)
   if(!is.null(bounds)) {bounds <- obj@legend@values}
   if(!is.null(color)) {color <- obj@legend@color}
   
+  ## Get the units and resolution of the raster
+  # if LonLat units are deg, otherwise get unit from proj string or EPSG code.
+  if(isLonLat(obj)){
+    Res_unit <- "deg"
+  } else {
+    # Citation: From tmaptools package
+    prj <- projection(obj)
+    pat <- "^.*\\+units ?= ?(\\S*)(.*)$"
+    Res_unit <- sub(pat, "\\1", prj[grepl(pat, prj)])
+  }
+  Res_value <- res(obj)[1]
+  
   ## convert a Raster layer to SGDF:
   if(nlayers(obj) > 1){
     obj <- raster(obj, layer = 1)
   }
   obj <- as(obj, "SpatialGridDataFrame") 
   
-  .spMetadata.Spatial(obj, ...)
+  .spMetadata.Spatial(obj, Res_unit=Res_unit, MD_Resolution=Res_value, ...)
 }
 
 setMethod("spMetadata", "RasterLayer", .spMetadata.Raster)
