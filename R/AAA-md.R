@@ -37,6 +37,7 @@ metadata.env <- function(
    MD_Other_restrictions = get("license_url", envir = plotKML.opts),
    MD_Equivalent_scale = "",
    MD_Resolution = "",
+   MD_Resolution_units = "",
    MD_Language_code = Language_code,
    MD_Topic_category_code = "geoscientificInformation",
    Extent_West_Longitude = "",
