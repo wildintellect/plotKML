@@ -213,6 +213,7 @@ metadata.env <- function(
     MD_Other_restrictions = MD_Other_restrictions,
     MD_Equivalent_scale = MD_Equivalent_scale,
     MD_Resolution = MD_Resolution,
+    MD_Resolution_units = MD_Resolution_units,
     MD_Language_code = MD_Language_code,
     MD_Topic_category_code = MD_Topic_category_code,
     Extent_West_Longitude = Extent_West_Longitude,

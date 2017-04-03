@@ -210,10 +210,11 @@ setMethod("GetPalette", "SpatialMetadata", function(obj){obj@palette})
       
       
       MD_Resolution <- get("MD_Resolution", envir = metadata)
+      MD_Resolution_units <- get("MD_Resolution_units", envir = metadata)
       if(!MD_Resolution==""){
         xmlValue(ml[["identificationInfo"]][["MD_DataIdentification"]][[xx[2]]][["MD_Resolution"]][["distance"]][["Distance"]]) <- MD_Resolution
-        xmlAttrs(ml[["identificationInfo"]][["MD_DataIdentification"]][[xx[2]]][["MD_Resolution"]][["distance"]][["Distance"]])[[1]] <- "#m"
-      }
+        xmlAttrs(ml[["identificationInfo"]][["MD_DataIdentification"]][[xx[2]]][["MD_Resolution"]][["distance"]][["Distance"]])[[1]] <- MD_Resolution_units
+      } 
       
       ## Coordinate system:
       MD_ReferenceSystem_Identifier <- get("MD_ReferenceSystem_Identifier", envir = metadata)
@@ -541,7 +542,7 @@ setMethod("spMetadata", "Spatial", .spMetadata.Spatial)
   }
   obj <- as(obj, "SpatialGridDataFrame") 
   
-  .spMetadata.Spatial(obj, Res_unit=Res_unit, MD_Resolution=Res_value, ...)
+  .spMetadata.Spatial(obj, MD_Resolution_units=Res_unit, MD_Resolution=Res_value, ...)
 }
 
 setMethod("spMetadata", "RasterLayer", .spMetadata.Raster)
