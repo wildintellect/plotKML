@@ -1,6 +1,6 @@
 Package: plotKML
-Version: 0.5-6
-Date: 2016-05-02
+Version: 0.5-7
+Date: 2017-03-29
 Title: Visualization of Spatial and Spatio-Temporal Objects in Google
         Earth
 Authors@R: c(person("Tomislav", "Hengl", role = c("cre", "aut"),
@@ -8,7 +8,8 @@ Authors@R: c(person("Tomislav", "Hengl", role = c("cre", "aut"),
     person("Pierre", "Roudier", role = "ctb"),
     person("Dylan", "Beaudette", role = "ctb"),
 	person("Edzer", "Pebesma", role = "ctb"),
-  person("Michael", "Blaschek", role = "ctb"))
+  person("Michael", "Blaschek", role = "ctb"),
+  person("Alex", "Mandel", role = "ctb"))
 Maintainer: Tomislav Hengl <tom.hengl@isric.org>
 Depends: R (>= 2.13.0)
 Imports: methods, tools, utils, XML, sp, raster, rgdal, spacetime,
@@ -27,6 +28,7 @@ Author: Tomislav Hengl [cre, aut],
   Pierre Roudier [ctb],
   Dylan Beaudette [ctb],
   Edzer Pebesma [ctb],
-  Michael Blaschek [ctb]
+  Michael Blaschek [ctb],
+  Alex Mandel [ctb]
 Repository: CRAN
 Date/Publication: 2016-05-03 01:51:20

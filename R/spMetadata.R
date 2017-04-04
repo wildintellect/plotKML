@@ -201,14 +201,13 @@ setMethod("GetPalette", "SpatialMetadata", function(obj){obj@palette})
       }
       
       ## TODO: if it's a vector layer put a scale, if it's raster get the units and resolution
+      ## TODO: Figure out how to remove the tag from the xml or allow for a blank
       ## Scale number / resolution:
       MD_Equivalent_scale <- get("MD_Equivalent_scale", envir = metadata)
       xx <- which(names(ml[["identificationInfo"]][["MD_DataIdentification"]]) == "spatialResolution")  ## TH: there are two nodes of the same name!
       if(!MD_Equivalent_scale==""){
         xmlValue(ml[["identificationInfo"]][["MD_DataIdentification"]][[xx[1]]][["MD_Resolution"]][["equivalentScale"]][["MD_RepresentativeFraction"]][["denominator"]][["Integer"]]) <- MD_Equivalent_scale
       }
-      
-      
       MD_Resolution <- get("MD_Resolution", envir = metadata)
       MD_Resolution_units <- get("MD_Resolution_units", envir = metadata)
       if(!MD_Resolution==""){
@@ -217,6 +216,7 @@ setMethod("GetPalette", "SpatialMetadata", function(obj){obj@palette})
       } 
       
       ## Coordinate system:
+      ## TODO: INSPIRE validation warning, preference for EPSG codes with URI over proj string, can you include both?
       MD_ReferenceSystem_Identifier <- get("MD_ReferenceSystem_Identifier", envir = metadata)
       if(MD_ReferenceSystem_Identifier==""){  
         xmlValue(ml[["referenceSystemInfo"]][["MD_ReferenceSystem"]][["referenceSystemIdentifier"]][["RS_Identifier"]][["code"]][[1]]) <- proj4string(obj)
