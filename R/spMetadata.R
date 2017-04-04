@@ -160,8 +160,6 @@ setMethod("GetPalette", "SpatialMetadata", function(obj){obj@palette})
       }
       # Default DateStamp is now
       xmlValue(ml[["dateStamp"]][["Date"]][[1]]) <- get("Date_stamp", envir = metadata)
-      print(xmlValue(ml[["dateStamp"]][["Date"]][[1]]))
-      #xmlValue(ml[["dateStamp"]][["Date"]][[1]]) <- strftime(Sys.Date(),"%Y-%m-%d")
       
       ## Responsible party:
       xmlValue(ml[["identificationInfo"]][["MD_DataIdentification"]][["pointOfContact"]][["CI_ResponsibleParty"]][["organisationName"]][[1]]) <- get("MD_Organisation_name", envir = metadata)
