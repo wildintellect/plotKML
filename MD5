@@ -1,7 +1,7 @@
-8dff4209d9f0e12eda8dfa1615f6069c *DESCRIPTION
+aae5dfc8abc0aa76fe36dba61ab31f62 *DESCRIPTION
 022e76f1864c4f0f6acb3e4b37d3ddb9 *NAMESPACE
 6fecfa4c8923c389076de1208ca076c1 *R/AAA-classes.R
-b6c2a2b782f06f072cce201506e333e6 *R/AAA-md.R
+69ce28b5b42369a4855fd8d51bd7432a *R/AAA-md.R
 5254a21ee2bc3776d79b3316d143794f *R/AAAA.R
 c1e9315b3637a8c22aef26441f12bd57 *R/ZZZ.R
 f8bc52dad396e2606b87b527386e5ef9 *R/aesthetics.R
@@ -47,12 +47,12 @@ c1db595fb316cff92945f5a2bae1498c *R/plotKML.SpatialPredictions.R
 7f2aa7a6fb993f4f5bf815bca0f138b6 *R/readGPX.R
 dc807f696ccf706ddf574a9eff723162 *R/readKML.GBIFdensity.R
 40b08df91e961b6393df74e2dc9d9838 *R/reproject.R
-d92bed606664c063af207d556a0199c8 *R/spMetadata.R
+f7c8dd346c920db115bfd304a4879c11 *R/spMetadata.R
 d2f358102c7ece20e8fe455ca2485e3c *R/spPhoto.R
 0948a41ebb52fc91b1eb39f7a468265e *R/vect2rast.R
 fd0b4f5656c15bae85cc1b76d0575787 *R/whitening.R
 d41d8cd98f00b204e9800998ecf8427e *TODO
-c4b93a6c368c9bff1f5495bd3873cc57 *build/vignette.rds
+c28f7468e46e0dfd47ca5f909487ffae *build/vignette.rds
 9060c942e52ce8a1939e2f36d145cbd4 *data/HRprec08.rda
 33060527d47b9b9095e5d2e0551d8b80 *data/HRtemp08.rda
 9b21818fdf75dca5813a4e17cf540ce5 *data/LST.rda
@@ -77,7 +77,7 @@ bc4f0691e7de86b5b80b0f7f2d539c00 *data/worldgrids_pal.rda
 0151826f1d09d6600bd3670113ca2d7f *demo/plotKML.R
 019df2dab449e35ebc97a078639e1c2f *inst/CITATION
 4e57d54acb8d3d76b983cf8ac2d2ce1a *inst/FGDC.xml
-cd540f046ef463f7aef867e19213b991 *inst/INSPIRE_ISO19139.xml
+e5b5c8bd3ac21bd45ce14f51e182f225 *inst/INSPIRE_ISO19139.xml
 d41d8cd98f00b204e9800998ecf8427e *inst/NEWS
 52489fc4bbffc35a73c93fdc6c74abda *inst/doc/jss1079.R
 f231fc62841c0f1bc4f2714d2914601e *inst/doc/jss1079.Rnw
